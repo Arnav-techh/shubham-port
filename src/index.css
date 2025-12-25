@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Rose-Pink-Amber Wedding Palette */
+    --background: 30 30% 98%;
+    --foreground: 25 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 30% 15%;
+
+    /* Rose-Pink Primary */
+    --primary: 350 65% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Soft Pink Secondary */
+    --secondary: 340 40% 94%;
+    --secondary-foreground: 350 50% 35%;
+
+    /* Warm Cream Muted */
+    --muted: 35 30% 95%;
+    --muted-foreground: 25 20% 45%;
+
+    /* Amber Accent */
+    --accent: 38 90% 55%;
+    --accent-foreground: 25 30% 15%;
+
+    /* Gold */
+    --gold: 45 85% 50%;
+    --gold-light: 45 70% 70%;
+    --gold-dark: 40 80% 35%;
+
+    /* Rose variations */
+    --rose: 350 65% 55%;
+    --rose-light: 350 60% 75%;
+    --rose-dark: 350 60% 40%;
+
+    /* Pink variations */
+    --pink: 330 55% 65%;
+    --pink-light: 330 50% 85%;
+
+    /* Amber variations */
+    --amber: 38 90% 55%;
+    --amber-light: 40 80% 75%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 25% 88%;
+    --input: 35 25% 88%;
+    --ring: 350 65% 55%;
+
+    --radius: 0.75rem;
+
+    /* Glassmorphism */
+    --glass: 0 0% 100% / 0.2;
+    --glass-border: 0 0% 100% / 0.3;
+    --glass-blur: 20px;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(350 65% 55%), hsl(330 55% 65%), hsl(38 90% 55%));
+    --gradient-hero: linear-gradient(180deg, hsl(35 30% 98%) 0%, hsl(350 40% 96%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(45 85% 50%), hsl(40 80% 60%));
+
+    /* Sidebar */
+    --sidebar-background: 30 30% 98%;
+    --sidebar-foreground: 25 30% 15%;
+    --sidebar-primary: 350 65% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 35 30% 95%;
+    --sidebar-accent-foreground: 25 30% 15%;
+    --sidebar-border: 35 25% 88%;
+    --sidebar-ring: 350 65% 55%;
+  }
+
+  .dark {
+    --background: 25 25% 8%;
+    --foreground: 35 25% 95%;
+
+    --card: 25 20% 12%;
+    --card-foreground: 35 25% 95%;
+
+    --popover: 25 20% 12%;
+    --popover-foreground: 35 25% 95%;
+
+    --primary: 350 60% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 25 20% 18%;
+    --secondary-foreground: 35 25% 90%;
+
+    --muted: 25 15% 20%;
+    --muted-foreground: 35 20% 60%;
+
+    --accent: 38 80% 50%;
+    --accent-foreground: 25 25% 10%;
+
+    --gold: 45 80% 55%;
+    --gold-light: 45 65% 65%;
+    --gold-dark: 40 75% 40%;
+
+    --rose: 350 60% 60%;
+    --rose-light: 350 55% 70%;
+    --rose-dark: 350 55% 45%;
+
+    --pink: 330 50% 60%;
+    --pink-light: 330 45% 75%;
+
+    --amber: 38 80% 50%;
+    --amber-light: 40 70% 65%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 25 15% 22%;
+    --input: 25 15% 22%;
+    --ring: 350 60% 60%;
+
+    --glass: 0 0% 100% / 0.08;
+    --glass-border: 0 0% 100% / 0.15;
+
+    --sidebar-background: 25 20% 12%;
+    --sidebar-foreground: 35 25% 95%;
+    --sidebar-primary: 350 60% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 25 15% 20%;
+    --sidebar-accent-foreground: 35 25% 95%;
+    --sidebar-border: 25 15% 22%;
+    --sidebar-ring: 350 60% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', system-ui, sans-serif;
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/20 backdrop-blur-xl border border-white/30 shadow-lg;
+  }
+
+  .glass-card-solid {
+    @apply bg-white/90 backdrop-blur-xl border border-white/50 shadow-xl;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-rose via-pink to-amber bg-clip-text text-transparent;
+  }
+
+  .gradient-bg {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-border {
+    @apply relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: var(--gradient-primary);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  .mandala-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e8b4b8' fill-opacity='0.08'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20v20h20zm0 0c0 11.046 8.954 20 20 20V30H30zm0 0c11.046 0 20-8.954 20-20H30v20zm0 0c-11.046 0-20 8.954-20 20h20V30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-300 ease-out hover:scale-105;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+    background-size: 200% 100%;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s ease-out forwards;
+}
+
+.animation-delay-100 { animation-delay: 100ms; }
+.animation-delay-200 { animation-delay: 200ms; }
+.animation-delay-300 { animation-delay: 300ms; }
+.animation-delay-400 { animation-delay: 400ms; }
+.animation-delay-500 { animation-delay: 500ms; }
