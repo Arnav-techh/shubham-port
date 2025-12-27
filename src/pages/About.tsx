@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ChevronLeft, ChevronRight, Star, MapPin, Award, Camera } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import GlassCard from '@/components/ui/GlassCard';
-import prewedding1 from '@/assets/prewedding-1.jpg';
+import shubham from '@/assets/shubham/shubham-portrait2.png';
 
 interface Testimonial {
   id: number;
@@ -73,7 +73,7 @@ const About = () => {
             <div className="relative animate-fade-up">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src={prewedding1}
+                  src={shubham}
                   alt="Shubham Limbodiya - Wedding Photographer"
                   className="w-full aspect-[4/5] object-cover"
                 />
